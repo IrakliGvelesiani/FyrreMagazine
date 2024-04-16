@@ -1,0 +1,143 @@
+.widget {
+  height: 175vh;
+  min-height: 150px;
+  overflow: auto;
+  position: sticky;
+  top: 5%;
+}
+
+@media screen and (max-width: 1350px) {
+  .widget {
+  display: none;
+  }
+}
+@media screen and (max-width: 479px) {
+  .widget {
+  display: block;
+  height: auto; 
+  min-height: 100px; 
+  position: static; 
+  top: auto; 
+  }
+}
+
+.widget__title h4 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+.widget__title h3 {
+  margin-top: 1rem;
+  font-size: 3rem;
+  font-weight: 600;
+  line-height: 120%;
+}
+
+.widget__img img {
+  margin-top: 2rem;
+  display: inline-block;
+  width: 100%;
+}
+
+.popular__posts__container {
+  margin: 4rem 0;
+}
+
+.popular__posts__title h4 {
+  text-transform: uppercase;
+
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.popular__posts__list {
+  border-bottom: 1px solid #000;
+  padding-bottom: 2rem;
+  margin-top: 2rem;
+  grid-column-gap: 1rem;
+  grid-row-gap: 1rem;
+  grid-template-rows: auto;
+  grid-template-columns: 40px 1fr;
+  grid-auto-columns: 1fr;
+  display: grid;
+}
+.popular__posts__list__num {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 140%;
+}
+.popular__posts__list__items h4 {
+  margin-bottom: 1rem;
+
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 140%;
+}
+
+.newsletter__container {
+  background-color: #f8f8f8;
+  padding: 2em 2rem 2rem;
+}
+
+.newsletter__container-title h3 {
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 150%;
+}
+
+.newsletter__container__input-title h3 {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 130%;
+}
+
+@media screen and (max-width: 479px) {
+  .newsletter__container__input-title h3{
+    font-size: 1.5rem;
+  }
+  
+}
+
+.newsletter__container__input form {
+  display: block;
+  margin-top: 0em;
+}
+
+.newsletter__container__input input {
+  margin-top: 2rem;
+  border: 0 solid #000;
+  margin-bottom: 0;
+  padding: 1.5rem 1rem;
+  width: 100%;
+  height: 38px;
+  color: #333;
+  background-color: #fff;
+  margin-bottom: 10px;
+
+  font-size: 14px;
+  line-height: 1.42857;
+  display: block;
+}
+
+.newsletter__container__input button {
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: #000;
+  border: 1px solid #000;
+  padding: 1rem 2rem;
+
+  font-size: 0.875rem;
+  font-weight: 400;
+  text-decoration: none;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}

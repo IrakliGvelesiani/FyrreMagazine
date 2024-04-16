@@ -1,0 +1,49 @@
+.post__nav {
+    margin-top: 3rem;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  
+  .post__nav__link {
+    color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 120%;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  .post__nav__link {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem; 
+    text-decoration: none; 
+  }
+  .post__nav__link img {
+    width: 20px;
+    height: 20px;
+    line-height: 100%;
+  }
+  
+  .post__nav p {
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    font-weight: 600;
+    line-height: 130%;
+  }
+  
+  @media screen and (max-width: 767px) {
+    .post__nav p {
+      font-size: 1.5rem;
+    }
+  
+    .post__nav {
+      margin-top: 1.25rem;
+    }
+  }

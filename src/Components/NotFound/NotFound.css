@@ -1,0 +1,92 @@
+.notfound__wrapper {
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.notfound__container {
+text-align: center;
+
+}
+
+.notfound__title h1 {
+    font-size: 12rem;
+}
+
+@media screen and (max-width: 991px) {
+  .notfound__title h1 {
+    font-size: 10rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .notfound__title h1 {
+    font-size: 6rem;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .notfound__title h1 {
+    font-size: 4rem;
+  }
+}
+
+.notfound__content h2 {
+    font-size: 3rem;
+    font-weight: 600;
+    line-height: 120%;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 767px) {
+  .notfound__content h2 {
+    font-size: 2rem;
+  }
+}
+
+.notfound__button a {
+    cursor: pointer;
+    margin-top: 2rem;
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background-color: #000;
+    border: 1px solid #000;
+    padding: 1.3rem;
+    font-family: Generalsans, sans-serif;
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-decoration: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+    -webkit-transition: border-color 0.35s ease, background 0.35s ease;
+    transition: border-color 0.35s ease, background 0.35s ease;
+  }
+  
+  .notfound__button a:before {
+    background-color: white;
+    content: "";
+    display: block;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    -webkit-transition: all 0.35s ease;
+    transition: all 0.35s ease;
+  }
+  
+  .notfound__button a:hover:before {
+    top: 0;
+  }
+  
+  .notfound__button a:hover {
+    color: #000;
+    transition: 0.25s;
+  }
+
+ 
