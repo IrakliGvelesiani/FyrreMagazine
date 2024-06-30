@@ -1,29 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { getArticles as fetchArticles } from "./getArticlels"; 
+import { getArticles as fetchArticles } from "./getArticlels";
 import { Link } from "react-router-dom";
-import formatString from "../Utils/FormatString"; 
+import formatString from "../Utils/FormatString";
 
 const Authors = () => {
-  const [authors, setAuthors] = useState([]); // State to store fetched authors data
+  const [authors, setAuthors] = useState([]);
 
-  // Effect to scroll to the top of the page when the component mounts
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
-  // Effect to fetch authors data when the component mounts
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchArticles(); // Fetching authors data using fetchArticles function
-      setAuthors(data); // Setting fetched authors data to state
+      const data = await fetchArticles();
+      setAuthors(data);
     };
 
-    fetchData(); // Calling fetchData function to initiate data fetching
+    fetchData();
   }, []);
 
   return (
     <div className="authors__container">
-      {authors.map((author, index) => (
+      {authors.map((author) => (
         <div key={author.id} className="authors__container-item">
           <div className="authors__container-list">
             <Link
@@ -45,6 +43,17 @@ const Authors = () => {
               >
                 <h2>{author.author}</h2>
               </Link>
+
+              <div className="author__row-meta mobile">
+                <div className="author__row-meta-item sml-txt">
+                  <strong>Job</strong>
+                  <p>{author.job}</p>
+                </div>
+                <div className="author__row-meta-item sml-txt">
+                  <strong>City</strong>
+                  <p>{author.city}</p>
+                </div>
+              </div>
             </div>
 
             <div className="author__row-meta">
