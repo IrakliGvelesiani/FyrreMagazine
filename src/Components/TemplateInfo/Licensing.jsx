@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import PageTitle from "../../Components/PageTitle/PageTitle";
-import "./TemplateInfo.css";
+
 
 const Licensing = () => {
   useEffect(() => {

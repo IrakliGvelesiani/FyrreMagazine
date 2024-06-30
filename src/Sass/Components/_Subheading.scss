@@ -1,0 +1,57 @@
+.post__latest {
+    border-top: 1px solid $black;
+    padding-top: 3rem;
+    margin-top: 6rem;
+    margin-bottom: 6rem;
+    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-columns: 1fr;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  
+    h2 {
+      text-transform: uppercase;
+      font-size: 6.5rem;
+  
+      @include breakpoint-md {
+        font-size: 3.75rem;
+      }
+  
+      @include breakpoint-sm {
+        font-size: 3rem;
+      }
+  
+      @include breakpoint-xs {
+        font-size: 2.6rem;
+      }
+    }
+  }
+  
+  .post__latest__link {
+    color: $black;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 120%;
+    text-decoration: none;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem; 
+    text-decoration: none;
+  
+    img {
+      width: 20px;
+      height: 20px;
+      line-height: 100%;
+    }
+  
+    @include breakpoint-xs {
+      p {
+        display: none;
+      }
+    }
+  }
+  

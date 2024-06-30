@@ -1,5 +1,4 @@
 import React from "react";
-import "./Hero.css";
 import HeroImage from "../../Assets/images/articles/single-post/dont-close-your-eyes.jpg";
 import MobileHeroImage from "../../Assets/images/articles/single-post/mobile-dont-close-your-eyes.jpg"; // Path to your mobile image
 import { Link } from "react-router-dom";

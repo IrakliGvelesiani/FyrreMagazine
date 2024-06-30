@@ -1,5 +1,4 @@
 import React, { useRef } from "react";
-import "./SideBar.css";
 import Input from "../UI/Input/Input"; // Assuming Input component is defined
 
 export default function NewsletterSignUp() {

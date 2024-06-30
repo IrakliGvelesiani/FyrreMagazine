@@ -1,18 +1,21 @@
-import React from "react";
+import React, { useEffect } from "react";
 import PropTypes from "prop-types";
 
-const Helmet = (props) => {
-  document.title = props.title;
+const Helmet = ({ title, children }) => {
+  useEffect(() => {
+    document.title = title;
+    return () => {
+      // Optionally reset document title when component unmounts
+      // document.title = "Default Title";
+    };
+  }, [title]);
 
-  React.useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return <div>{props.children}</div>;
+  return <>{children}</>;
 };
 
 Helmet.propTypes = {
   title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default Helmet;

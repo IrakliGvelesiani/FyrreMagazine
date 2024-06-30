@@ -1,8 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./PostNavigation.css";
+
+
+
 
 export default function PostNavigation({ children, href }) {
+  
   return (
     <div className="post__nav">
       <Link

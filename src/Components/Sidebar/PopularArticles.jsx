@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./SideBar.css";
 
 // Import the articles data from your JSON file
 import authorData from "../../Assets/data/articles.json";

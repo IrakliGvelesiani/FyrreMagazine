@@ -1,10 +1,14 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import FooterLinks from "./FooterLinks";
 import { Link } from "react-router-dom";
-import "./Footer.css";
 import NewsletterTicker from "../NewsLetterTicker/NewsletterTicker";
 import Input from "../UI/Input/Input";
 import Logo from "../../Assets/logos/FyrreMagazineLogo-White.svg";
+import { gsap } from "gsap";
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const firstColumn = [
   {
@@ -69,10 +73,33 @@ function Footer() {
     event.preventDefault();
     InvalidMsg(emailRef);
     if (emailRef.current.checkValidity()) {
-      // Proceed with form submission
       console.log("Form submitted with email:", emailRef.current.value);
     }
   };
+
+  useEffect(() => {
+    const ourText = new SplitType('.newsletter__left', { types: 'chars' });
+    const chars = ourText.chars;
+
+    gsap.fromTo(
+      chars,
+      { 
+        y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 2,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.newsletter__left',
+          start: 'top 80%',
+        },
+      }
+    );
+  }, []);
 
   return (
     <footer className="footer">
@@ -130,7 +157,7 @@ function Footer() {
             <a href="https://github.com/IrakliGvelesiani">Irakli Gvelesiani</a>.
             All content belongs to their respective copyright holders.
           </p>
-          <FooterLinks/>
+          <FooterLinks />
         </div>
       </div>
     </footer>

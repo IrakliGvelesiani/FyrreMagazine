@@ -11,6 +11,8 @@ import StyleGuide from "../Components/TemplateInfo/StyleGuide";
 import Licensing from "../Components/TemplateInfo/Licensing";
 import Changelog from "../Components/TemplateInfo/Changelog";
 import NotFound from "../Components/NotFound/NotFound";
+import CookieBanner from "../Components/CookieBanner/CookieBanner";
+
 
 
 const ScrollToTop = () => {
@@ -27,6 +29,7 @@ const Routes = () => {
   return (
     <>
       <ScrollToTop />
+      <CookieBanner/>
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/magazine" component={Magazine} exact />

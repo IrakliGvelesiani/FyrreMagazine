@@ -1,10 +1,69 @@
-import React from "react";
+import React, { useEffect } from "react";
 import podcastData from "../../Assets/data/podcasts.json";
-import "./LatestPodcasts.css";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const LatestPodcasts = () => {
   const selectedPodcasts = podcastData.slice(0, 3);
+
+  useEffect(() => {
+    // Animation for the title using SplitType and GSAP
+    const ourText = new SplitType('.latest-podcasts__top-title h2', { types: 'chars' });
+    const chars = ourText.chars;
+
+    gsap.fromTo(
+      chars,
+      { 
+        y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 2,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.latest-podcasts__top-title',
+          start: 'top 80%',
+        },
+      }
+    );
+
+    // Animation for each podcast card
+    const cards = document.querySelectorAll('.latest-podcasts__bottom-item');
+
+    cards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { 
+          y: 100,
+          opacity: 0,
+          rotation: 10
+        },
+        {
+          y: 0,
+          opacity: 1,
+          rotation: 0,
+          duration: 2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+          },
+          stagger: {
+            amount: 0.5,
+            each: 0.25,
+            from: index % 2 === 0 ? "start" : "center",
+          },
+        }
+      );
+    });
+  }, []); // Only run once on mount
 
   return (
     <div className="latest-podcasts">
@@ -48,11 +107,11 @@ const LatestPodcasts = () => {
               </div>
               <div className="latest-podcasts__bottom-item-bottom-meta">
                 <div className="latest-podcasts__bottom-item-bottom-meta-item">
-                  <div className="subnav-item">
+                  <div className="subnav__item">
                     <strong>Date</strong>
                     <p>{podcast.date}</p>
                   </div>
-                  <div className="subnav-item">
+                  <div className="subnav__item">
                     <strong>Duration</strong>
                     <p>{podcast.duration}</p>
                   </div>

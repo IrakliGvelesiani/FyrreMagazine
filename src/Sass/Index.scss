@@ -1,15 +1,40 @@
+@import "./Variables";
+@import "./Mixins";
+
+
+@import "./Components/Button";
+@import "./Components/Hero";
+@import "./Components/Header";
+@import "./Components/Articles";
+@import "./Components/Authorss";
+@import "./Components/AuthorsList";
+@import "./Components/Footer";
+@import "./Components/LatestArticle";
+@import "./Components/LatestPodcasts";
+@import "./Components/NewsletterTicker";
+@import "./Components/NotFound";
+@import "./Components/Podcasts";
+@import "./Components/SideBar";
+@import "./Components/TemplateInfo";
+@import "./Components/ArticleDetails";
+@import "./Components/AuthorsDetails";
+@import "./Components/PodcastDetails";
+@import "./Components/PostNavigation";
+@import "./Components/Subheading";
+@import "./Components/CookieBanner";
+
+
 @font-face {
   font-family: "General Sans";
   src: local("General Sans"),
-    url(./Assets/fonts/GeneralSans/Fonts/WEB/fonts/GeneralSans-Medium.woff2)
+    url(../Assets/fonts/GeneralSans/Fonts/WEB/fonts/GeneralSans-Medium.woff2)
       format("woff2"),
-    url(./Assets/fonts/GeneralSans/Fonts/WEB/fonts/GeneralSans-Medium.woff)
+    url(../Assets/fonts/GeneralSans/Fonts/WEB/fonts/GeneralSans-Medium.woff)
       format("woff");
   font-weight: normal;
   font-style: normal;
 }
-
-
+  
 * {
   padding: 0;
   margin: 0;
@@ -44,13 +69,14 @@ img {
   display: inline-block;
 }
 
+
 .btn {
   cursor: pointer;
-  color: #000;
+  color: $black;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   white-space: nowrap;
-  border: 1px solid #000;
+  border: 1px solid $black;
   border-radius: 500px;
   align-items: center;
   padding: 0.5rem 0.75rem;
@@ -65,8 +91,8 @@ img {
 .btn::before {
   position: absolute;
   content: "";
-  background: #000;
-  color: #fff;
+  background: $black;
+  color: $white;
   width: 150px;
   height: 200px;
   z-index: -1;
@@ -74,7 +100,8 @@ img {
 }
 
 .btn:hover {
-  color: white;
+  color: $white;
+
 }
 
 .btn:before {
@@ -105,3 +132,9 @@ img {
 .underline {
   text-decoration: underline;
 }
+
+
+
+
+
+  

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getPodcasts } from "./getPodcasts";
-import "./Podcasts.css";
 
 const Podcasts = () => {
   const [data, setData] = useState([]);

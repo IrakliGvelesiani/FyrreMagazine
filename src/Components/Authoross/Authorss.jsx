@@ -1,23 +1,24 @@
 import React, { useState, useEffect } from "react";
 import { getArticles as fetchArticles } from "./getArticlels"; 
 import { Link } from "react-router-dom";
-import "./Authorss.css";
-import formatString from "../Utils/FormatString";
+import formatString from "../Utils/FormatString"; 
 
 const Authors = () => {
-  const [authors, setArticles] = useState([]);
+  const [authors, setAuthors] = useState([]); // State to store fetched authors data
+
+  // Effect to scroll to the top of the page when the component mounts
   useEffect(() => {
-    // Scroll to the top of the page when the component is mounted
     window.scrollTo(0, 0);
   }, []);
 
+  // Effect to fetch authors data when the component mounts
   useEffect(() => {
     const fetchData = async () => {
-      const data = await fetchArticles();
-      setArticles(data);
+      const data = await fetchArticles(); // Fetching authors data using fetchArticles function
+      setAuthors(data); // Setting fetched authors data to state
     };
 
-    fetchData();
+    fetchData(); // Calling fetchData function to initiate data fetching
   }, []);
 
   return (
@@ -38,27 +39,24 @@ const Authors = () => {
             </Link>
 
             <div className="author__title">
-                <Link
-                  to={`authors/${formatString(author.author)}`}
-                  className="author__title-link"
-                >
-                  <h2>{author.author}</h2>
-                </Link>
-              </div>
-           
-             
+              <Link
+                to={`authors/${formatString(author.author)}`}
+                className="author__title-link"
+              >
+                <h2>{author.author}</h2>
+              </Link>
+            </div>
 
-              <div className="author__row-meta">
-                <div className="author__row-meta-item sml-txt">
-                  <strong>Job</strong>
-                  <p>{author.job}</p>
-                </div>
-                <div className="author__row-meta-item sml-txt">
-                  <strong>City</strong>
-                  <p>{author.city}</p>
-                </div>
+            <div className="author__row-meta">
+              <div className="author__row-meta-item sml-txt">
+                <strong>Job</strong>
+                <p>{author.job}</p>
               </div>
-            
+              <div className="author__row-meta-item sml-txt">
+                <strong>City</strong>
+                <p>{author.city}</p>
+              </div>
+            </div>
 
             <div className="author__row-button">
               <Link

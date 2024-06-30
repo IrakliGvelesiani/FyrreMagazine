@@ -1,9 +1,71 @@
-import React from "react";
+import React, { useEffect } from "react";
 import authorData from "../../Assets/data/articles.json";
-import "./AuthorsList.css";
 import { Link } from "react-router-dom";
+import { gsap } from "gsap";
+import SplitType from "split-type";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const AuthorsHome = () => {
+  // Effect to animate text and cards when the component mounts
+  useEffect(() => {
+    // Splitting the title text into individual characters for animation
+    const ourText = new SplitType('.authors-home__top-title h2', { types: 'chars' });
+    const chars = ourText.chars;
+
+    // Animating each character of the title text
+    gsap.fromTo(
+      chars,
+      { 
+        y: 100,
+        opacity: 0
+      },
+      {
+        y: 0,
+        opacity: 1,
+        stagger: 0.05,
+        duration: 2,
+        ease: 'power4.out',
+        scrollTrigger: {
+          trigger: '.authors-home__top-title',
+          start: 'top 80%',
+        },
+      }
+    );
+
+    // Selecting all author cards for animation
+    const cards = document.querySelectorAll('.authors-home__bottom-item');
+
+    // Animating each author card
+    cards.forEach((card, index) => {
+      gsap.fromTo(
+        card,
+        { 
+          y: 100,
+          opacity: 0,
+          rotation: 3
+        },
+        {
+          y: 0,
+          opacity: 1,
+          rotation: 0,
+          duration: 2,
+          ease: 'power4.out',
+          scrollTrigger: {
+            trigger: card,
+            start: 'top 80%',
+          },
+          stagger: {
+            amount: 0.5,
+            each: 0.25,
+            from: index % 2 === 0 ? "start" : "center",
+          },
+        }
+      );
+    });
+  }, []);
+
   return (
     <div className="authors-home">
       <div className="authors-home__top">

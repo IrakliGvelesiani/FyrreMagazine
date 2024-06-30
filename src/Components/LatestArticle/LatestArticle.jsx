@@ -1,6 +1,5 @@
 import React from "react";
 import EastIcon from "@mui/icons-material/East";
-import "./LatestArticle.css";
 import Articles from "./Articles";
 import jsonData from "../../Assets/data/articles.json";
 import { Link } from "react-router-dom";

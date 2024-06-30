@@ -1,0 +1,21 @@
+.newsletter-ticker {
+  background: $black;
+  color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 700;
+  
+  &__text__first,
+  &__text__second {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+
+    span:last-child {
+      margin-right: 2rem;
+    }
+  }
+}
